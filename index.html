@@ -39,17 +39,36 @@
             template.querySelector('.email').textContent = Email;
 
             var clone = document.importNode(template, true); //Creates a copy of a node (node_template,deeps)
-            document.body.appendChild(clone);
+            return clone;
         }
 
         function customeElement(){
-            var userPr = document.createElement('user-profile');
-            document.body.appendChild(userPr);
+            var userProfileProto = Object.create(HTMLElement.prototype);
+
+            userProfileProto.init = function(name,last_name,company) {
+                var element = template(name,last_name,company);
+                this.appendChild(element);
+            };
+
+            /*
+             userProfileProto.attributeChangedCallback=function(name,oldVal,newVal){
+             console.log(name);
+             console.log(newVal);
+             };
+             */
+
+            var userProfile = document.registerElement('user-profile', {
+                prototype: userProfileProto
+            });
         }
 
         window.onload=function(){
-            template("John","Morales","john@rockalabs.com");
+            //template("John","Morales","john@rockalabs.com");
             customeElement();
+            var userPr = document.createElement('user-profile');
+            userPr.init("John","Morales","john@rockalabs.com");
+            document.body.appendChild(userPr);
+
         };
     </script>
 </head>
