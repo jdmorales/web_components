@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Example Web Components</title>
+    <style>
+        .element_profile{
+            height: auto;
+            display: inline-block;
+            background-color: gray;
+            padding: 0.5em;
+            color: white;
+            font-family: sans-serif;
+            margin-left:5px;
+        }
+        .element_profile div{
+            float: left;
+        }
+
+        .element_profile .last_name{
+            margin-left: 5px;
+        }
+
+        .element_profile .email{
+            border-top: 1px solid white;
+            padding-top: 0.5em;
+            width: 100%;
+            margin-top: 5px;
+            color: #ABA8A8;
+        }
+
+    </style>
+    <script>
+        function template(Name,Last_Name,Email){
+            var template = document.querySelector('#profileTemplate').content;
+
+            template.querySelector('.name').textContent = Name;
+            template.querySelector('.last_name').textContent = Last_Name;
+            template.querySelector('.email').textContent = Email;
+
+            var clone = document.importNode(template, true); //Creates a copy of a node (node_template,deeps)
+            document.body.appendChild(clone);
+        }
+        window.onload=function(){
+            template("John","Morales","john@rockalabs.com");
+            template("Sergio","Morales","john@rockalabs.com");
+        };
+    </script>
+</head>
+<body>
+<template id="profileTemplate">
+    <div class="element_profile">
+        <div class="name"></div>
+        <div class="last_name"></div>
+        <div class="email"></div>
+    </div>
+</template>
+</body>
+</html>
