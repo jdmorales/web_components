@@ -41,9 +41,15 @@
             var clone = document.importNode(template, true); //Creates a copy of a node (node_template,deeps)
             document.body.appendChild(clone);
         }
+
+        function customeElement(){
+            var userPr = document.createElement('user-profile');
+            document.body.appendChild(userPr);
+        }
+
         window.onload=function(){
             template("John","Morales","john@rockalabs.com");
-            template("Sergio","Morales","john@rockalabs.com");
+            customeElement();
         };
     </script>
 </head>
