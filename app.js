@@ -61,6 +61,7 @@ window.onload=function(){
     //template("Sergio","Florez","sergio@rockalabs.com");
     customElement();
     Model();
+    
     /*
      var userPr = document.createElement('user-profile');
      userPr.init("John","Morales","john@rockalabs.com");
