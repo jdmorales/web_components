@@ -59,14 +59,8 @@ function Model(){
 window.onload=function(){
     //template("John","Morales","john@rockalabs.com");
     //template("Sergio","Florez","sergio@rockalabs.com");
-    var link = document.querySelector('link[rel="import"]');
-    link.addEventListener('load', function(e) {
-        var importedDoc = link.import;
-        console.log(importedDoc);
-        // importedDoc points to the document under component.html
-    });
-    // customElement();
-    //Model();
+    customElement();
+    Model();
     /*
      var userPr = document.createElement('user-profile');
      userPr.init("John","Morales","john@rockalabs.com");
