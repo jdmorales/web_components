@@ -7,6 +7,7 @@ function template(person){
     template.querySelector('.cell').textContent= person.cell;
     template.querySelector('.last_name').textContent = person.last_name;
     template.querySelector('.email').textContent = person.email;
+    template.querySelector('.location').textContent=person.location.city +","+person.location.state; 
     //var wrapperImg=template.querySelector('wrapper-img');
     var img=template.querySelector('img');
     //var htmlSpinner='<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>';
@@ -72,7 +73,7 @@ function Model(){
     
     for (i = 0; i < numPeople; i++) {
         $.ajax({
-              url: 'https://randomuser.me/api/?inc=email,phone,gender,name,picture,cell',
+              url: 'https://randomuser.me/api/?inc=email,phone,gender,name,picture,cell,location',
               dataType: 'json',
               success: function(data){
                 var result=data.results[0];
@@ -82,6 +83,7 @@ function Model(){
                     email: result.email,
                     cell:result.cell,
                     photo:result.picture.large,
+                    location:result.location
                 }
                 //console.log(person);
                 appendElement(person);

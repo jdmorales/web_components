@@ -4,10 +4,49 @@
             height: auto;
             display: inline-block;
             background-color: gray;
-            padding: 0.5em;
-            color: white;
+            padding: 1em;
+            color: gray;
             font-family: sans-serif;
-            margin-left:5px;
+            margin-left: 1%;
+            margin-right: 1%;
+            position: relative;
+            margin-top: 3em;
+            background-color: #F4F4F4;
+            min-width: 256px;
+            min-height: 100px;
+            margin-top: 3em;
+            background-color: #F4F4F4;
+            
+            -webkit-box-shadow: rgba(159,159,159,0.5) 1px 2px 1px;
+            box-shadow: rgba(159,159,159,0.5) 1px 2px 1px;
+            border-radius: 0.3em;
+        }
+        
+        .wrapper-img{
+            height:100px;
+            width:100px;
+            border-radius:10em;
+            overflow:hidden;
+            background-color:white;
+            padding:0.2em;
+            border:1px solid rgba(0,0,0,0.4);
+            position: absolute;
+            top: -46px;
+            left: 4%;
+        }
+        
+        img{
+            height: 100%;
+            width: 100%;
+            border-radius: 6em;
+        }
+        
+        .wrapper-name{
+            position: absolute;
+            left: 1em;
+            top: 3.5em;
+            text-transform: capitalize;
+            font-size: 1.2em;
         }
         
         .element_profile div{
@@ -17,21 +56,51 @@
         .element_profile .last_name{
             margin-left: 5px;
         }
+        
+        .location,  .cell{
+           float: right;
+           position: absolute;
+           right: 1em;
+        }
+        
+        .cell{
+            top: 1em;
+        }
+        
+        .location{
+           top: 2.5em;
+            width: 52%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
         .element_profile .email{
-            border-top: 1px solid white;
+            border-top: 2px solid white;
             padding-top: 0.5em;
             width: 100%;
             margin-top: 5px;
-            color: #ABA8A8;
+            bottom: 0em;
+            position: absolute;
+            left: 0em;
+            background-color: gray;
+            padding-bottom: 0.5em;
+            color: white;
+            border-bottom-right-radius: 0.2em;
+            border-bottom-left-radius: 0.2em;
         }
+        
     </style>
     <div class="element_profile">
-        <div class="name"></div>
+        <div class="wrapper-img">
+            <img src="#" class="photo">
+        </div>
+        <div class="wrapper-name">
+            <div class="name"></div>
+            <div class="last_name"></div>
+        </div>
         <div class="cell"></div>
-        <div class="last_name"></div>
+        <div class="location"></div>
         <div class="email"></div>
-
-        <img src="#" class="photo">
     </div>
 </template>
