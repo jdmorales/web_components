@@ -11,6 +11,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "components-font-awesome": "^4.6.1"
+    "components-font-awesome": "^4.6.1",
+    "jquery": "^2.2.3"
   }
 }
