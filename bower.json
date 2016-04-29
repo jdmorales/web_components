@@ -1,0 +1,16 @@
+{
+  "name": "web_components",
+  "homepage": "https://github.com/jdmorales/web_components",
+  "authors": [
+    "jdmorales092@gmail.com"
+  ],
+  "description": "",
+  "main": "",
+  "keywords": [
+    "web-components"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "components-font-awesome": "^4.6.1"
+  }
+}

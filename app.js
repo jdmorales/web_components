@@ -48,6 +48,14 @@ function Model(){
             email:"sergio@rockalabs.com"
         }
     ];
+    
+    $.ajax({
+      url: 'http://api.randomuser.me/?results=50',
+      dataType: 'json',
+      success: function(data){
+        console.log(data);
+      }
+    });
 
     for (i = 0; i < people.length; i++) {
         var userPr = document.createElement('user-profile');
